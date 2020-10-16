@@ -2,28 +2,22 @@ import React from 'react';
 import ReactDom from 'react-dom';
 
 /**
- * * JSX Rules
- * * return single element
- * * div / section / article or Fragment
- * * use camelCase for html attribute
- * * className instead of class
- * * close every element
- * * formatting
+ * * NESTED COMPONENTS, REACT TOOLS
  */
 
 function Greeting() {
   return (
-    <div className=''>
-      <h3>Hello World</h3>
-      <ul>
-        <li>
-          <a href='#'>hii</a>
-        </li>
-      </ul>
-      <img src='' alt='' />
-      <input type='text' name='' id='' />
+    <div>
+      <Person />
+      <Message />
     </div>
   );
 }
 
+const Person = () => <h1>Hello World</h1>;
+const Message = () => {
+  return (
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, cumque?</p>
+  );
+};
 ReactDom.render(<Greeting />, document.getElementById('root'));
