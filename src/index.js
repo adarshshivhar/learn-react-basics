@@ -2,22 +2,30 @@ import React from 'react';
 import ReactDom from 'react-dom';
 
 /**
- * * NESTED COMPONENTS, REACT TOOLS
+ * * BOOK LIST
  */
 
-function Greeting() {
+function BookList() {
   return (
-    <div>
-      <Person />
-      <Message />
-    </div>
+    <section>
+      <Book />
+      <Book />
+      <Book />
+    </section>
   );
 }
 
-const Person = () => <h1>Hello World</h1>;
-const Message = () => {
-  return (
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, cumque?</p>
-  );
-};
-ReactDom.render(<Greeting />, document.getElementById('root'));
+const Book = () => {
+    return(
+        <article>
+            <Image />
+            <Title />
+            <Author />
+        </article>
+    );
+}
+const Image = () => <img src="https://m.media-amazon.com/images/I/81V8qATf6xL._AC_UY327_FMwebp_QL65_.jpg" alt="" />;
+const Title = () => <h1>The Immortals Of Meluha (Hindi)</h1>;
+const Author = () => <h4>by Amish</h4>;
+
+ReactDom.render(<BookList />, document.getElementById('root'));
